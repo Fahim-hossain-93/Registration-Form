@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Create your account</title>
+<style>
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    color: #1f2a37;
+    background: #e8f0ee;
+  }
+
+  .form-card {
+    width: 100%;
+    max-width: 560px;
+    background: #ffffff;
+    padding: 36px 40px;
+    border-radius: 10px;
+    border-top: 6px solid #0f766e;
+    box-shadow: 0 8px 30px rgba(15, 60, 55, 0.15);
+  }
+
+  h1 { margin: 0 0 4px; font-size: 26px; }
+  .subtitle { margin: 0 0 24px; color: #5b6774; font-size: 15px; }
+
+  .row { display: flex; gap: 16px; }
+  .field { flex: 1; margin-bottom: 18px; }
+
+  label, legend {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  input[type="tel"],
+  input[type="password"],
+  select {
+    width: 100%;
+    padding: 11px 12px;
+    font-size: 15px;
+    font-family: inherit;
+    border: 1.5px solid #c5ced6;
+    border-radius: 6px;
+    background: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  input:focus, select:focus {
+    outline: none;
+    border-color: #0f766e;
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.2);
+  }
+
+  fieldset { border: none; padding: 0; margin: 0 0 18px; }
+  .radio-group { display: flex; gap: 24px; }
+  .radio-group label { font-weight: 400; margin: 0; cursor: pointer; }
+  .radio-group input { margin-right: 6px; accent-color: #0f766e; }
+
+  .terms { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 22px; }
+  .terms input { margin-top: 3px; accent-color: #0f766e; }
+  .terms label { margin: 0; font-weight: 400; font-size: 14px; }
+  .terms a { color: #0f766e; }
+
+  button {
+    width: 100%;
+    padding: 13px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: inherit;
+    color: #fff;
+    background: #0f766e;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  button:hover { background: #0b5c56; }
+  button:focus-visible { outline: 3px solid rgba(15, 118, 110, 0.4); outline-offset: 2px; }
+
+  @media (max-width: 520px) {
+    .row { flex-direction: column; gap: 0; }
+    .form-card { padding: 28px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<form class="form-card" action="#" method="post">
+  <h1>Create your account</h1>
+  <p class="subtitle">Fill in the details below to register.</p>
+
+  <div class="row">
+    <div class="field">
+      <label for="fname">First name</label>
+      <input type="text" id="fname" name="first_name" placeholder="Amzad" required>
+    </div>
+    <div class="field">
+      <label for="lname">Last name</label>
+      <input type="text" id="lname" name="last_name" placeholder="Hossain" required>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+  </div>
+
+  <div class="row">
+    <div class="field">
+      <label for="dob">Date of birth</label>
+      <input type="date" id="dob" name="dob" required>
+    </div>
+    <div class="field">
+      <label for="phone">Phone number</label>
+      <input type="tel" id="phone" name="phone" placeholder="01XXXXXXXXX"
+             pattern="01[0-9]{9}" title="Enter an 11-digit number starting with 01" required>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" minlength="8"
+           placeholder="At least 8 characters" required>
+  </div>
+
+  <fieldset>
+    <legend>Gender</legend>
+    <div class="radio-group">
+      <label><input type="radio" name="gender" value="male" required>Male</label>
+      <label><input type="radio" name="gender" value="female">Female</label>
+    </div>
+  </fieldset>
+
+  <div class="field">
+    <label for="district">District</label>
+    <select id="district" name="district" required>
+      <option value="" disabled selected>Select your district</option>
+      <option value="dhaka">Dhaka</option>
+      <option value="rajshahi">Rajshahi</option>
+      <option value="chattogram">Chattogram</option>
+      <option value="khulna">Khulna</option>
+      <option value="sylhet">Sylhet</option>
+      <option value="barishal">Barishal</option>
+      <option value="rangpur">Rangpur</option>
+      <option value="mymensingh">Mymensingh</option>
+    </select>
+  </div>
+
+  <div class="terms">
+    <input type="checkbox" id="terms" name="terms" required>
+    <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+  </div>
+
+  <button type="submit">Register</button>
+</form>
+
+</body>
+</html>
